@@ -50,6 +50,7 @@
                             <artifactId>lombok</artifactId>
                             <version>${lombok.version}</version>
                         </path>
+                        <!-- Для JUnit 5 если нужно -->
                         <path>
                             <groupId>org.junit.platform</groupId>
                             <artifactId>junit-platform-commons</artifactId>
