@@ -1,5 +1,7 @@
 package org.example.SM;
 
+import org.example.Student;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,7 +25,7 @@ public class StudentManagementApp {
             System.out.print("Выберите опцию: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -51,6 +53,9 @@ public class StudentManagementApp {
     }
 
     private static void addStudent() {
+        System.out.print("Введите id студента: ");
+        Integer id = Integer.parseInt(scanner.nextLine());
+
         System.out.print("Введите имя студента: ");
         String name = scanner.nextLine();
 
@@ -60,7 +65,7 @@ public class StudentManagementApp {
         System.out.print("Введите оценку студента: ");
         double grade = scanner.nextDouble();
 
-        studentManager.addStudent(name, age, grade);
+        studentManager.addStudent(id, name, age, grade);
     }
 
     private static void filterByAge() {

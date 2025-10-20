@@ -1,15 +1,17 @@
 package org.example.SM;
 
+import org.example.StudentManager;
+
 public class StudentDemo {
     public static void main(String[] args) {
         StudentManager manager = new StudentManager();
 
         // Добавляем тестовых студентов
-        manager.addStudent("Иван Петров", 20, 4.5);
-        manager.addStudent("Мария Сидорова", 22, 4.8);
-        manager.addStudent("Алексей Иванов", 19, 3.9);
-        manager.addStudent("Елена Смирнова", 21, 4.2);
-        manager.addStudent("Дмитрий Козлов", 23, 4.6);
+        manager.addStudent(1,"Иван Петров", 20, 4.5);
+        manager.addStudent(2,"Мария Сидорова", 22, 4.8);
+        manager.addStudent(3,"Алексей Иванов", 19, 3.9);
+        manager.addStudent(4,"Елена Смирнова", 21, 4.2);
+        manager.addStudent(5,"Дмитрий Козлов", 23, 4.6);
 
         System.out.println("=== ВСЕ СТУДЕНТЫ ===");
         manager.printAllStudents();

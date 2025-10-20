@@ -1,15 +1,55 @@
 package org.example.SM;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
 public class Student {
     private int id;
     private String name;
     private int age;
     private double grade;
+
+    // Конструктор с параметрами (int, String, int, double)
+
+    public Student(int id, String name, int age, double grade) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+    public String getStudentString() {
+        return "id: " + String.valueOf(id) + " name: " + name + " age: " + age + " grade: " + grade;
+    }
+    public  int getAge() {
+        return age;
+    }
+
+    public double getGrade() {
+        return grade;
+    }
+
+    public static class StudentDemo {
+        public static void main(String[] args) {
+            StudentManager manager = new StudentManager();
+
+            // Добавляем тестовых студентов
+            manager.addStudent(1,"Иван Петров", 20, 4.5);
+            manager.addStudent(2,"Мария Сидорова", 22, 4.8);
+            manager.addStudent(3,"Алексей Иванов", 19, 3.9);
+            manager.addStudent(4,"Елена Смирнова", 21, 4.2);
+            manager.addStudent(5,"Дмитрий Козлов", 23, 4.6);
+
+            System.out.println("=== ВСЕ СТУДЕНТЫ ===");
+            manager.printAllStudents();
+
+            System.out.println("\n=== ФИЛЬТРАЦИЯ ПО ВОЗРАСТУ (20-22) ===");
+            manager.printStudents(manager.filterByAge(20, 22));
+
+            System.out.printf("\n=== СРЕДНЯЯ ОЦЕНКА: %.2f ===\n", manager.calculateAverageGrade());
+
+            System.out.println("\n=== СОРТИРОВКА ПО ОЦЕНКАМ ===");
+            manager.printStudents(manager.sortByGradeDescending());
+        }
+    }
 }
+
